@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+    
+body{margin-top:20px;}
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body
+{
+font-family: 'Open Sans', sans-serif;
+}
+.chat_box .chat_message_wrapper ul.chat_message > li + li {
+    margin-top: 4px;
+}
+
+.chat_box_wrapper.chat_box_small.chat_box_active {
+    background:#e1e3e5;
+    height: 600px;
+    overflow-y: auto; 
+    width: 450px;
+}
+
+.chat_box {
+    padding: 16px;
+}
+.chat_box .chat_message_wrapper::after {
+    clear: both;
+}
+.chat_box .chat_message_wrapper::after, .chat_box .chat_message_wrapper::before {
+    content: " ";
+    display: table;
+}
+.chat_box .chat_message_wrapper .chat_user_avatar {
+    float: left;
+}
+.chat_box .chat_message_wrapper {
+    margin-bottom: 20px;
+}
+.md-user-image {
+    border-radius: 50%;
+    width: 48px;
+	height:48px;
+}
+img {
+    border: 0 none;
+    box-sizing: border-box;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.chat_box .chat_message_wrapper ul.chat_message, .chat_box .chat_message_wrapper ul.chat_message > li {
+    list-style: outside none none;
+    padding: 0;
+}
+.chat_box .chat_message_wrapper ul.chat_message {
+    float: left;
+    margin: 0 0 0 20px;
+    max-width: 67%;
+}
+.chat_box.chat_box_colors_a .chat_message_wrapper ul.chat_message > li:first-child::before {
+    border-right-color: #616161;
+}
+.chat_box .chat_message_wrapper ul.chat_message > li:first-child::before {
+    border-color: transparent #ededed transparent transparent;
+    border-style: solid;
+    border-width: 0 16px 16px 0;
+    content: "";
+    height: 0;
+    left: -14px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.chat_box.chat_box_colors_a .chat_message_wrapper ul.chat_message > li {
+    background: #FCFBF6 none repeat scroll 0 0;
+    color: #000000;
+}
+
+.chat_box .chat_message_wrapper ul.chat_message > li {
+    background: #ededed none repeat scroll 0 0;
+    border-radius: 4px;
+    clear: both;
+    color: #212121;
+    display: block;
+    float: left;
+    font-size: 13px;
+    padding: 8px 16px;
+    position: relative;
+    word-break: break-all;
+}
+.chat_box .chat_message_wrapper ul.chat_message, .chat_box .chat_message_wrapper ul.chat_message > li {
+    list-style: outside none none;
+    padding: 0;
+}
+.chat_box .chat_message_wrapper ul.chat_message > li {
+    margin: 0;
+}
+.chat_box .chat_message_wrapper ul.chat_message > li p {
+    margin: 0;
+}
+.chat_box.chat_box_colors_a .chat_message_wrapper .chat_message_time {
+    color: rgba(185, 186, 180, 0.9);
+}
+.chat_box .chat_message_wrapper .chat_message_time {
+    color: #e1e3e5;
+	text-align:center;
+    display: block;
+    font-size: 11px;
+    padding-top: 2px;
+	font-size:14px;
+    text-transform: uppercase;
+}
+.chat_box .chat_message_wrapper.chat_message_right .chat_user_avatar {
+    float: right;
+}
+.chat_box .chat_message_wrapper.chat_message_right ul.chat_message {
+    float: right;
+    margin-left: 0 !important;
+    margin-right: 24px !important;
+}
+.chat_box.chat_box_colors_a .chat_message_wrapper.chat_message_right ul.chat_message > li:first-child::before {
+    border-left-color: #83acc5;
+}
+.chat_box.chat_box_colors_a .chat_message_wrapper ul.chat_message > li:first-child::before {
+    border-right-color: #FCFBF6;
+}
+.chat_box .chat_message_wrapper.chat_message_right ul.chat_message > li:first-child::before {
+    border-color: transparent transparent transparent #ededed;
+    border-width: 0 0 29px 29px;
+    left: auto;
+    right: -14px;
+}
+.chat_box .chat_message_wrapper ul.chat_message > li:first-child::before {
+    border-color: transparent #ededed transparent transparent;
+    border-style: solid;
+    border-width: 0 29px 29px 0;
+    content: "";
+    height: 0;
+    left: -14px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.chat_box.chat_box_colors_a .chat_message_wrapper.chat_message_right ul.chat_message > li {
+    background: #83acc5 none repeat scroll 0 0;
+}
+.chat_box .chat_message_wrapper ul.chat_message > li {
+    background: #ededed none repeat scroll 0 0;
+    border-radius: 12px;
+    clear: both;
+    color: #212121;
+    display: block;
+    float: left;
+    font-size: 13px;
+    padding: 8px 16px;
+    position: relative;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div id="chat" class="chat_box_wrapper chat_box_small chat_box_active" style="opacity: 1; display: block; transform: translateX(0px);">
+                        <div class="chat_box touchscroll chat_box_colors_a">
+                            <div class="chat_message_wrapper">
+                                <div class="chat_user_avatar">
+                                    <a href="https://web.facebook.com/iamgurdeeposahan" target="_blank" >
+                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="md-user-image">
+                                    </a>
+                                </div>
+								<span class="chat_message_time">13:38</span>
+                                <ul class="chat_message">
+                                    <li>
+                                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eum? </p>
+                                    </li>
+                                    <li>
+                                        <p> Lorem ipsum dolor sit amet </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chat_message_wrapper chat_message_right">
+                                <div class="chat_user_avatar">
+                                <a href="https://web.facebook.com/iamgurdeeposahan" target="_blank" >
+                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="md-user-image">
+                                </a>
+                                </div>
+								<span class="chat_message_time">13:34</span>
+                                <ul class="chat_message">
+                                    <li>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.  natus nulla perspiciatis quae quasi, quis recusandae, saepe, sunt totam.
+                                            
+                                        </p>
+                                    </li>
+                                </ul>
+                        </div>
+						<div class="chat_message_wrapper chat_message_right">
+                                <div class="chat_user_avatar">
+                                <a href="https://web.facebook.com/iamgurdeeposahan" target="_blank" >
+                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="md-user-image">
+                                </a>
+                                </div>
+								<span class="chat_message_time">13:34</span>
+                                <ul class="chat_message">
+                                    <li>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.atus nulla perspiciatis quae quasi, quis recusandae, saepe, sunt totam.
+                                            
+                                        </p>
+                                    </li>
+                                </ul>
+                        </div>
+						
+						<div class="chat_message_wrapper">
+                                <div class="chat_user_avatar">
+                                    <a href="https://web.facebook.com/iamgurdeeposahan" target="_blank" >
+                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="md-user-image">
+                                    </a>
+                                </div>
+								<span class="chat_message_time">13:34</span>
+                                <ul class="chat_message">
+                                    <li>
+                                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eum? </p>
+                                    </li>
+                                    <li>
+                                        <p> Lorem ipsum dolor sit amet </p>
+                                    </li>
+                                </ul>
+                            </div>
+				</div>
+			</div>
+		</body>
+</html>
